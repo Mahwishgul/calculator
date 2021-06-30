@@ -14,17 +14,16 @@ class _CalculatorState extends State<Calculator> {
   Widget btn( var txt){
     return
       Container(
-        margin: EdgeInsets.only(bottom: 2),
-          child:
-          ConstrainedBox(
-          constraints: BoxConstraints.tightFor(width: 100, height: 128),
-    child: ElevatedButton(onPressed: (){
+          width: MediaQuery.of(context).size.width * 0.25,
+          height: MediaQuery.of(context).size.height * 0.15,
+          margin: EdgeInsets.only(bottom: 2),
+          child: ElevatedButton(onPressed: (){
         setState(() {
           result = result + txt;
         });
       }, child: Text(txt),
         style: ElevatedButton.styleFrom(
-            primary: Color(0xFF4d4847),
+            primary: Color(0xFF282b30),
             textStyle: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold)
@@ -32,7 +31,7 @@ class _CalculatorState extends State<Calculator> {
         ),
 
     ),
-          ),
+
 
       );
   }
@@ -59,7 +58,9 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: Container(
+        height: MediaQuery.of(context).size.height*1,
+        width: MediaQuery.of(context).size.width*1,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -82,18 +83,17 @@ class _CalculatorState extends State<Calculator> {
                 btn("8"),
                 btn("9"),
                 Container(
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.15,
                   margin: EdgeInsets.only(bottom: 2),
                   child:
-                  ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(width: 100, height: 128),
-                    child: ElevatedButton(onPressed: clr , child: Text("C"),
-                      style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF4d4847),
-                          textStyle: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold)
+                  ElevatedButton(onPressed: clr , child: Text("C"),
+                    style: ElevatedButton.styleFrom(
+                        primary: Color(0xFF282b30),
+                        textStyle: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold)
 
-                      ),
                     ),
                   ),
                 ),
@@ -125,18 +125,17 @@ class _CalculatorState extends State<Calculator> {
                 btn("0"),
                 btn("*"),
                 Container(
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.15,
                   margin: EdgeInsets.only(bottom: 2),
                   child:
-                  ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(width: 100, height: 128),
-                    child: ElevatedButton(onPressed: output , child: Text("="),
-                      style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFff1900),
-                          textStyle: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold)
+                  ElevatedButton(onPressed: output , child: Text("="),
+                    style: ElevatedButton.styleFrom(
+                        primary: Color(0xFFff1900),
+                        textStyle: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold)
 
-                      ),
                     ),
                   ),
                 ),
